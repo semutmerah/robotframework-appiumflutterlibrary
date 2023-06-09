@@ -27,7 +27,7 @@ class _ApplicationManagementKeyWords(KeywordGroup):
         | Open Application | http://localhost:4723/wd/hub | platformName=Android | automationName=flutter | platformVersion=4.2.2  | deviceName=192.168.56.101:5555 | app=${CURDIR}/demoapp/OrangeDemoApp.apk | appPackage=com.netease.qa.orangedemo | appActivity=MainActivity |
         """
         desired_caps = kwargs
-        if desired_caps['automationName'] != 'flutter':
+        if desired_caps['automationName'] != 'flutter' or desired_caps['automationName'] != 'Flutter':
             raise ValueError("Appium Flutter Library only suports flutter automation. Try changing automationName capability to 'flutter'")
         self._debug("Opening application")
         application = Remote(str(remote_url), desired_caps)
